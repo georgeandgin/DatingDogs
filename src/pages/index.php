@@ -17,7 +17,7 @@
     $stmt->execute();
 
     while ($stmt->fetch()) {
-        echo $username;
+        echo "<p>$username</p>";
       }
 
       $stmt->close();
