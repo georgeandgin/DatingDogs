@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../style/style.css">
     
     <title>Dating Dogs</title>
+    <?php include ('../components/config.php');?>
+    <?php include ('../components/connect.php');?>
 </head>
 <body>
 <?php include ('../components/header.php');?>
