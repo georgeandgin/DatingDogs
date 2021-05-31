@@ -1,7 +1,6 @@
 body{
-    background-color: aquamarine;
+    background-color: #C4C4C4;
 }
-
 //Setup ------------
 
 //COLORS
@@ -15,4 +14,50 @@ body{
 
 *{
     font-family: 'Old Standard TT', serif;
+}
+
+.links{
+    float: right;
+    margin: 20px;
+    display: flex;
+    a{
+        margin:20px;
+        font-size: 24pt;
+    }
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+h1{color: white;
+font-size: 100pt;
+margin-left: auto;
+margin-right: auto;
+text-align: center;}
+
+#headerbone{
+    margin:20px;
+}
+
+.footer{
+    h2{
+        font-size:24pt;
+    }
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    margin-left: auto;
+margin-right: auto;}
+
+.both{
+    display:flex;
+    justify-content: center;
+    .options{
+        text-align: center;
+        h3{
+            font-size:24pt;
+        }
+    }
 }
