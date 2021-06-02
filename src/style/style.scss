@@ -64,3 +64,71 @@ margin-right: auto;}
         }
     }
 }
+.forum{
+    width:900px;
+    margin-left:auto;
+    margin-right:auto;
+    .tags{
+        display:flex;
+        h3{
+            font-size:24pt;
+        }
+        div{
+            display:flex;
+            h5{padding-left:10px;
+            font-size:16pt;}
+        }
+    }
+    .newpost{
+        font-style:italic;
+        font-size:24pt;
+    }
+    .forumpost{
+        display:flex;
+        flex-wrap: wrap;
+        h3{
+            margin-bottom:0;
+            font-size:24pt;
+        }
+        img{
+            width:5%;
+        }
+        .break {
+            flex-basis: 100%;
+            height: 0;
+          }
+          h6{
+              margin-top:10px;
+              font-size:16pt;
+              margin-right:20px;
+          }
+          h5{margin-top:10px;
+        font-size:12pt;}
+    }
+}
+
+.container{
+    width:900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .item {
+        width: 30%;
+        padding: 1%;
+        padding-bottom: 5%; /* Same as width, sets height */
+        margin-bottom: 2%; /* (100-32*3)/2 */
+        position: relative;
+        img{
+            width: 90%;
+        }
+        h4{
+            font-size:24pt;
+            margin-top: 10px;
+        }
+      }
+  }
+  

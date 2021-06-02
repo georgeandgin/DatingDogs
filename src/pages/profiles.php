@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +14,32 @@
 <body>
 <?php include ('../components/header.php');?>
 
-<div class="both">
-<div class="options">
-<a href="forum.php"><img id="forumPic" src="../assets/forumPic.png" alt="DOG BONE"></a>
-<h3>Forum</h3>
+<div class="container">
+    <h2> Search by breed: ____________<h2>
+<div class="profiles">
+    <div class="item">
+        <img src="../assets/marko.png">
+        <h4> Marko </h4>
+    </div>
+
+    <div class="item">
+        <img src="../assets/marko.png">
+        <h4> George </h4>
+    </div>
+
+    <div class="item">
+        <img src="../assets/marko.png">
+        <h4> Galin </h4>
+    </div>
+
+    <div class="item">
+        <img src="../assets/marko.png">
+        <h4> Ivan </h4>
+    </div>
+
+</div>
 </div>
 
-<div class="options">
-<img id="profilePic" src="../assets/profilesPic.png" alt="DOG BONE">
-<h3>Profiles</h3>
-</div>
-</div>
 <?php include ('../components/footer.php');?>
 
 
