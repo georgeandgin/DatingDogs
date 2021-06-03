@@ -21,19 +21,24 @@
 <h3>Select a tag:</h3>
 </div>
 <div class="break"></div>
+
 <div>
-<h5>#food</h5>
-<h5>#health</h5>
-<h5>#games</h5>
-<h5>#sports</h5>
-<h5>#other</h5>
-<h5>#training</h5>
-<h5>#beauty</h5>
-<h5>#mating</h5>
-<h5>#fashion</h5>
+<?php
+    $query = "SELECT * FROM tag";
+
+    $stmt = $db->prepare($query);
+    $stmt->bind_result($tagID, $tagName);
+    $stmt->execute();
+
+    while ($stmt->fetch()){
+        echo "<h5> #$tagName </h5>";
+        echo "<br>";
+    }
+
+    $stmt->close();
+?>
 </div>
 
-</div>
 <h3 class="newpost"><a href="createpost.php">Create a post</a></h3>
 
 <div class="forumpost">
