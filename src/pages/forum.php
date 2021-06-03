@@ -21,7 +21,6 @@
 <h3>Select a tag:</h3>
 </div>
 <div class="break"></div>
-
 <div>
 <?php
     $query = "SELECT * FROM tag";
@@ -39,6 +38,7 @@
 ?>
 </div>
 
+</div>
 <h3 class="newpost"><a href="createpost.php">Create a post</a></h3>
 
 <div class="forumpost">
