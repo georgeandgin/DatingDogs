@@ -16,6 +16,8 @@
 </form>
 
 <?php
+    // ADD STORE SESSION AND COOKIES
+
     if (isset($_POST['submit'])){
         $username = $_POST['username'];
         $email = $_POST['email'];
