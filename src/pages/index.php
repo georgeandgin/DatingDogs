@@ -20,7 +20,7 @@
 </div>
 
 <div class="options">
-<img id="profilePic" src="../assets/profilesPic.png" alt="DOG BONE">
+<a href="../pages/profiles.php"><img id="profilePic" src="../assets/profilesPic.png" alt="DOG BONE"></a>
 <h3>Profiles</h3>
 </div>
 </div>
