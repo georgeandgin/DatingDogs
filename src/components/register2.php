@@ -26,8 +26,6 @@
     <input type="submit" name="submit" value="Register dog profile" onclick="">
 </form>
 
-<input type="submit" name="later" value="Create dog profile later" onclick= "window.location = '../pages/index.php'">
-
 <?php
     if (isset($_POST['submit'])){
         $dogName = $_POST['dogName'];
@@ -42,18 +40,39 @@
         $location = $_POST['location'];
         $description = $_POST['description'];
         $phoneNumber = $_POST['phone'];
+
+        $currentUsername = $_SESSION['username'];
+
+        $query = "SELECT userID FROM user WHERE username = ?";
+        $stmt = $db->prepare($query);
+        $stmt->bind_param("s", $currentUsername);
+        $stmt->execute();
+        $stmt->bind_result($userID);
+        $stmt->close();
+
+        $owner = $userID;
         // profile img
         // link to owner
 
-        $query = "INSERT INTO dog (dogName, breed, mating, location, description, phoneNumber) VALUES (?,?,?,?,?,?)";
+        $query = "INSERT INTO dog (dogName, breed, mating, location, description, phoneNumber, owner) VALUES (?,?,?,?,?,?,?)";
 
         $stmt = $db->prepare($query);
-        $stmt->bind_param('ssssss', $dogName, $breed, $mating, $location, $description, $phoneNumber);
+        $stmt->bind_param('sssssss', $dogName, $breed, $mating, $location, $description, $phoneNumber, $owner);
         $stmt->execute();
         $stmt->close();
 
-        header('Location: ../pages/index.php');
+        $query = "SELECT dog.owner, user.userID FROM user INNER JOIN dog ON user.userID = dog.owner";
+        $stmt;
+        $stmt = $db->prepare($query);
+        $stmt->bind_result($owner, $userID);
+        $stmt->execute();
+
+        echo "hello";
+        echo $owner;
+
+        //header('Location: ../pages/index.php');
     }
+
 ?>
 
 </body>
