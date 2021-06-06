@@ -22,7 +22,7 @@
     <label for="breed">Phone number:</label>
     <input type="text" id="phone" name="phone" required><br>
     <label for="image">Profile picture:</label>
-    <input type="file" id="image" name="image" accept="image/*"><br>
+    <input type="file" id="image" name="image" accept="image/*" required><br>
     <input type="submit" name="submit" value="Register dog profile" onclick="">
     <input type="submit" name="later" value="Create dog profile later" onclick="window.location='../pages/index.php';">
 </form>

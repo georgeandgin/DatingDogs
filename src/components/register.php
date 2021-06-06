@@ -23,6 +23,9 @@
         $email = $_POST['email'];
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $userType = 'user';
+        
+        $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
+        $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
 
         $_SESSION['username'] = $username;
 
@@ -32,6 +35,8 @@
         $stmt->bind_param('sss', $username, $email, $password);
         $stmt->execute();
         $stmt->close();
+
+        $_SESSION["loggedin"] = true;
 
         header('Location: register2.php');
     }
