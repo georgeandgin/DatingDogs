@@ -18,8 +18,22 @@
     <h2> Search by breed: ____________<h2>
 <div class="profiles">
     <div class="item">
-        <img src="../assets/marko.png">
-        <h4> Marko </h4>
+
+        <?php
+            $query = "SELECT dogName, profilePicture from dog";
+
+            $stmt = $db->prepare($query);
+            $stmt->bind_result($dogName, $profilePicture);
+            $stmt->execute();
+
+            while ($stmt->fetch()) {
+              echo "<img src='../profileImg/" . $profilePicture . "'/>";
+              echo "<h4>$dogName</h4>";
+            }
+  
+            $stmt->close();
+        ?>
+
     </div>
 
     <div class="item">
@@ -30,11 +44,6 @@
     <div class="item">
         <img src="../assets/marko.png">
         <h4> Galin </h4>
-    </div>
-
-    <div class="item">
-        <img src="../assets/marko.png">
-        <h4> Ivan </h4>
     </div>
 
 </div>
