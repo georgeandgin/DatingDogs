@@ -23,8 +23,8 @@
         $email = $_POST['email'];
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $userType = 'user';
-        
-        $user = $_SESSION['username'];
+
+        $_SESSION['username'] = $username;
 
         $query = "INSERT INTO user (username, email, password, userType) VALUES (?,?,?, 'user')";
 

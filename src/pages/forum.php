@@ -23,9 +23,6 @@
 <div class="break"></div>
 <div>
 <?php
-
-    echo $_SESSION["userID"];
-
     $query = "SELECT * FROM tag";
 
     $stmt = $db->prepare($query);
