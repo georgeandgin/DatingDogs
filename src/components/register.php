@@ -25,7 +25,7 @@
         $userType = 'user';
         
         $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
-        $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
+        //$password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
 
         $_SESSION['username'] = $username;
 

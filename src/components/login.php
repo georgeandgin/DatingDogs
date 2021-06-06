@@ -25,30 +25,28 @@
 if(isset($_POST['username']) && isset($_POST['password'])) {
       
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $inputpassword = $_POST['password'];
 
     $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
-    $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
+    //$inputpassword = htmlspecialchars($inputpassword, ENT_QUOTES, 'UTF-8');
 
-    $query = "SELECT * from user WHERE username = '$username' AND password = '$password'";
+    $query = "SELECT * from user WHERE username = '$username'";
     $result = mysqli_query($db, $query);
 
     if(mysqli_num_rows($result) > 0 )
-        { 
-            $_SESSION["loggedin"] = true;
-            $_SESSION["username"] = $username; 
-            $_SESSION["userID"] = $userID;
-            $_SESSION["userType"] = $userType;
-
-            $stmt->close();
-
-            header('Location: profile.php');
+        {   
+            if (password_verify($inputpassword, $password)) {
+                $_SESSION["loggedin"] = true;
+                $_SESSION["username"] = $username; 
+                header('Location: profile.php');
+            } else {
+                print "The password is incorrect";
+              }
         }
         else
         {
-            echo 'The username or password are incorrect!';
+            echo 'The username is incorrect';
     }
-
 }
 ?>
 
