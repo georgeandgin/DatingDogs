@@ -14,7 +14,7 @@
 
 </div>
 <br>
-<h1> Dating Dogs </h1>
+<h1><a href="../pages/index.php">Dating Dogs </a></h1>
 
 </header>
 <body>
