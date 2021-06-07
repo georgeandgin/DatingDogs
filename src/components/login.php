@@ -30,17 +30,20 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
     $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
     $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
 
-    $query = "SELECT username, password from user WHERE username = ?";
+    $query = "SELECT * FROM user WHERE username = ?";
     $stmt = $db->prepare($query);
     $stmt->bind_param('s', $username);
     $stmt->execute();
-    $stmt->bind_result($username, $password);
+    $stmt->bind_result($username, $email, $password, $userType, $userID);
     $row = $stmt->fetch();
 
     if (!empty($row)) { // checks if the user actually exists(true/false returned)
         if (password_verify($_POST['password'], $password)) {
+            session_start();
             $_SESSION["loggedin"] = true;
             $_SESSION["username"] = $username;
+            $_SESSION["userType"] = $userType;
+            $_SESSION["userID"] = $userID;
             header('Location: ../pages/index.php');
         } else {
         echo 'Incorrect password';

@@ -39,7 +39,7 @@
 </div>
 
 </div>
-<h3 class="newpost"><a href="../components/createpost.php">Create a post</a></h3>
+<h3 class="newpost"><a href="../createpost.php">Create a post</a></h3>
 
 <div class="forumpost">
 <h3>How to tell your dog is vegan?</h3>
@@ -49,6 +49,26 @@
 <h5>#food</h5>
 <h5>#health</h5>
 </div>
+
+<?php
+        $query = "SELECT userID, heading from forumPost";
+
+        $stmt = $db->prepare($query);
+        $stmt->bind_result($userID, $heading);
+        $stmt->execute();
+
+        while ($stmt->fetch()) {
+            echo "<div class='forumpost'>";
+            echo "<h3>$heading</h3>";
+            echo "<img src='../assets/bone.png'>";
+            echo "<div class='break'></div>";
+            
+            echo "<h6> By $userID</h6>";
+            echo "</div>"; 
+        }
+  
+        $stmt->close();
+?>
 
 </div>
 
