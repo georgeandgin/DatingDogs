@@ -25,29 +25,33 @@
 if(isset($_POST['username']) && isset($_POST['password'])) {
       
     $username = $_POST['username'];
-    $inputpassword = $_POST['password'];
+    $password = $_POST['password'];
 
     $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
-    //$inputpassword = htmlspecialchars($inputpassword, ENT_QUOTES, 'UTF-8');
+    $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
 
-    $query = "SELECT * from user WHERE username = '$username'";
-    $result = mysqli_query($db, $query);
+    $query = "SELECT username, password from user WHERE username = ?";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param('s', $username);
+    $stmt->execute();
+    $stmt->bind_result($username, $password);
+    $row = $stmt->fetch();
 
-    if(mysqli_num_rows($result) > 0 )
-        {   
-            if (password_verify($inputpassword, $password)) {
-                $_SESSION["loggedin"] = true;
-                $_SESSION["username"] = $username; 
-                header('Location: profile.php');
-            } else {
-                print "The password is incorrect";
-              }
+    if (!empty($row)) { // checks if the user actually exists(true/false returned)
+        if (password_verify($_POST['password'], $password)) {
+            $_SESSION["loggedin"] = true;
+            $_SESSION["username"] = $username;
+            header('Location: ../pages/index.php');
+        } else {
+        echo 'Incorrect password';
         }
-        else
-        {
-            echo 'The username is incorrect';
+    } else {
+        echo "Such user does not exist"; //email entered does not match any in DB
     }
+    
+    $stmt->close();
 }
+
 ?>
 
 

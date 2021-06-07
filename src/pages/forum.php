@@ -39,7 +39,7 @@
 </div>
 
 </div>
-<h3 class="newpost"><a href="createpost.php">Create a post</a></h3>
+<h3 class="newpost"><a href="../components/createpost.php">Create a post</a></h3>
 
 <div class="forumpost">
 <h3>How to tell your dog is vegan?</h3>
