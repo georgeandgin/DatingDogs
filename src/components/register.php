@@ -1,9 +1,21 @@
 <?php include ('../components/config.php');?>
 <?php include ('../components/connect.php');?>
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    
+    <title>Dating Dogs</title>
+    <?php include ('../components/config.php');?>
+    <?php include ('../components/connect.php');?>
+</head>
 <body>
 
 <?php include ('header.php');?>
+
+
 
 <form action="" method="POST">
     <label for="username">Username:</label>
@@ -12,7 +24,7 @@
     <input type="text" id="email" name="email" required><br>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required><br>
-    <input type="submit" name="submit" value="Next" onclick="">
+    <input class="next" type="submit" name="submit" value="Next" onclick="">
 </form>
 
 <?php
@@ -41,5 +53,7 @@
         header('Location: register2.php');
     }
 ?>
+<?php include ('../components/footer.php');?>
+
 
 </body>

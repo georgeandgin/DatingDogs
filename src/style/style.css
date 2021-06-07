@@ -174,4 +174,62 @@ h1 {
   font-size: 24pt;
   margin-top: 10px;
 }
+
+form {
+  margin-left: 10%;
+}
+
+form label {
+  color: white;
+  font-size: 16pt;
+  border: none;
+}
+
+form input {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-top: 10px;
+  border: none;
+}
+
+.next {
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+  border: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+}
+
+#crtpost {
+  margin-left: 10%;
+}
+
+textarea {
+  margin-left: 10%;
+  border: none;
+}
+
+.insidePost h2 {
+  font-size: 24pt;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.insidePost p {
+  font-size: 12pt;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.insidePost h5 {
+  font-size: 16pt;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 /*# sourceMappingURL=style.css.map */
