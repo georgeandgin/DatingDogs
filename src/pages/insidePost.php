@@ -38,6 +38,42 @@
 
 </div>
 
+<h2>Add comment</h2>
+<form action="" method="POST" id="comment">
+    <input type="text" id="text" name="text" required>
+    <input class="next" type="submit" name="submit" value="Submit" onclick="">
+</form>
+
+<?php
+    $query = "SELECT comment.commentID, comment.postID, comment.userID, comment.text, user.username FROM comment INNER JOIN user ON (comment.userID = user.userID) WHERE postID = $postID";
+
+    $stmt = $db->prepare($query);
+    $stmt->bind_result($commentID, $postID, $userID, $text, $username);
+    $stmt->execute();
+
+    while ($stmt->fetch()) {
+        echo "<p> $text</p>";
+        echo "<h4> Comment by $username</h4>";
+    }
+
+    $stmt->close();
+
+
+     if (isset($_POST['submit'])){
+        $text = $_POST['text'];
+        $userID = $_SESSION["userID"];
+
+        $query = "INSERT INTO comment (postID, userID, text) VALUES (?,?,?)";
+
+        $stmt = $db->prepare($query);
+        $stmt->bind_param('iis', $postID, $userID, $text);
+        $stmt->execute();
+        $stmt->close();
+        header('Location: '.$_SERVER['REQUEST_URI']);
+    }
+
+?>
+
 <?php include ('../components/footer.php');?>
 
 

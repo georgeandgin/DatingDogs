@@ -39,16 +39,7 @@
 </div>
 
 </div>
-<h3 class="newpost"><a href="../createpost.php">Create a post</a></h3>
-
-<div class="forumpost">
-<h3>How to tell your dog is vegan?</h3>
-<img src="../assets/bone.png">
-<div class="break"></div>
-<h6> By Gintare</h6>
-<h5>#food</h5>
-<h5>#health</h5>
-</div>
+<h3 class="newpost"><a href="../components/createpost.php">Create a post</a></h3>
 
 <?php
         $query = "SELECT forumPost.postID, forumPost.userID, forumPost.heading, user.username FROM forumPost INNER JOIN user ON (forumPost.userID = user.userID)";
