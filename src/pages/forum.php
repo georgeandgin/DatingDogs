@@ -39,7 +39,7 @@
 </div>
 
 </div>
-<h3 class="newpost"><a href="createpost.php">Create a post</a></h3>
+<h3 class="newpost"><a href="../createpost.php">Create a post</a></h3>
 
 <div class="forumpost">
 <h3>How to tell your dog is vegan?</h3>
@@ -49,6 +49,25 @@
 <h5>#food</h5>
 <h5>#health</h5>
 </div>
+
+<?php
+        $query = "SELECT forumPost.postID, forumPost.userID, forumPost.heading, user.username FROM forumPost INNER JOIN user ON (forumPost.userID = user.userID)";
+
+        $stmt = $db->prepare($query);
+        $stmt->bind_result($postID, $userID, $heading, $username);
+        $stmt->execute();
+
+        while ($stmt->fetch()) {
+            echo "<div class='forumpost'>";
+            echo "<a href=\"insidePost.php?postID=$postID\">$heading</a>";
+            echo "<img src='../assets/bone.png'>";
+            echo "<div class='break'></div>";
+            echo "<h6> By $username</h6>";
+            echo "</div>"; 
+        }
+  
+        $stmt->close();
+?>
 
 </div>
 
