@@ -17,16 +17,16 @@
     <h2> Search by breed: ____________<h2>
 <div class="profiles">
     <?php
-        $query = "SELECT dogName, profilePicture from dog";
+        $query = "SELECT dogID, dogName, profilePicture from dog";
 
         $stmt = $db->prepare($query);
-        $stmt->bind_result($dogName, $profilePicture);
+        $stmt->bind_result($dogID, $dogName, $profilePicture);
         $stmt->execute();
 
         while ($stmt->fetch()) {
             echo "<div class='item'>";
-            echo "<img src='../profileImg/" . $profilePicture . "'/>";
-            echo "<h4>$dogName</h4>";
+            echo "<a href=\"profile.php?dogID=$dogID\"><img src='../profileImg/" . $profilePicture . "'/></a>";
+            echo "<h4><a href=\"profile.php?dogID=$dogID\">$dogName</a></h4>";
             echo "</div>"; 
         }
   
