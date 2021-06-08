@@ -51,18 +51,17 @@
 </div>
 
 <?php
-        $query = "SELECT forumPost.userID, forumPost.heading, user.username FROM forumPost INNER JOIN user ON (forumPost.userID = user.userID)";
+        $query = "SELECT forumPost.postID, forumPost.userID, forumPost.heading, user.username FROM forumPost INNER JOIN user ON (forumPost.userID = user.userID)";
 
         $stmt = $db->prepare($query);
-        $stmt->bind_result($userID, $heading, $username);
+        $stmt->bind_result($postID, $userID, $heading, $username);
         $stmt->execute();
 
         while ($stmt->fetch()) {
             echo "<div class='forumpost'>";
-            echo "<h3>$heading</h3>";
+            echo "<a href=\"insidePost.php?postID=$postID\">$heading</a>";
             echo "<img src='../assets/bone.png'>";
             echo "<div class='break'></div>";
-            
             echo "<h6> By $username</h6>";
             echo "</div>"; 
         }
