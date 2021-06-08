@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <header>
-<a href="#"><img id="headerbone" src="../assets/bone.png" alt="DOG BONE"></a>
+<a href="../components/api.php"><img id="headerbone" src="../assets/bone.png" alt="DOG BONE"></a>
 <div class="links">
 
 <h5><a href="../components/register.php"><i>register</i></a></h5>
