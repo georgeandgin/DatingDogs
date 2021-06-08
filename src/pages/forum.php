@@ -51,10 +51,10 @@
 </div>
 
 <?php
-        $query = "SELECT userID, heading from forumPost";
+        $query = "SELECT forumPost.userID, forumPost.heading, user.username FROM forumPost INNER JOIN user ON (forumPost.userID = user.userID)";
 
         $stmt = $db->prepare($query);
-        $stmt->bind_result($userID, $heading);
+        $stmt->bind_result($userID, $heading, $username);
         $stmt->execute();
 
         while ($stmt->fetch()) {
@@ -63,7 +63,7 @@
             echo "<img src='../assets/bone.png'>";
             echo "<div class='break'></div>";
             
-            echo "<h6> By $userID</h6>";
+            echo "<h6> By $username</h6>";
             echo "</div>"; 
         }
   
