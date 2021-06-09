@@ -1,9 +1,9 @@
 <?php include ('../components/config.php');?>
 <?php include ('../components/connect.php');?>
 
-<body>
-
 <?php include ('header.php');?>
+
+<body>
 
 <form action="" method="POST" enctype="multipart/form-data">
     <label for="dogName">Dog's name:</label>

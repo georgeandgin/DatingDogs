@@ -8,7 +8,7 @@ This is a random dog picture.<br>
 
 <?php
 // GET RANDOM DOG PICTURE
-isset($_POST['dogimg']);
+isset($_GET['dogimg']);
   $url = "https://dog.ceo/api/breeds/image/random";
   $data = json_decode(file_get_contents($url), true);
   $image = $data['message'];
