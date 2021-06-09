@@ -16,8 +16,14 @@
 
 <div class="forum">
 
+<div class="tags">
+<div>
+<h3>Select a tag:</h3>
+</div>
+<div class="break"></div>
+<div>
 <?php
-    /*$query = "SELECT * FROM tag";
+    $query = "SELECT * FROM tag";
 
     $stmt = $db->prepare($query);
     $stmt->bind_result($tagID, $tagName);
@@ -28,14 +34,14 @@
         echo "<br>";
     }
 
-    $stmt->close();*/
+    $stmt->close();
 ?>
+</div>
+
+</div>
+<h3 class="newpost"><a href="../components/createpost.php">Create a post</a></h3>
 
 <?php
-        if (!empty($_SESSION['username'])) {
-            echo "<h3 class='newpost'><a href='../components/createpost.php'>Create a post</a></h3>";
-        }
-
         $query = "SELECT forumPost.postID, forumPost.userID, forumPost.heading, user.username FROM forumPost INNER JOIN user ON (forumPost.userID = user.userID)";
 
         $stmt = $db->prepare($query);
