@@ -23,7 +23,7 @@
         <option name="breed" value="Komondor">Komondor</option>
         <option name="breed" value="Labrador">Labrador</option>
         <option name="breed" value="Golden doodle">Golden doodle</option>
-        <input  class="" type="submit" name="submit" value="submit">
+        <input  class="next" type="submit" name="submit" value="submit">
     </form>
     </select>
 
