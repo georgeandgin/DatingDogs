@@ -38,13 +38,14 @@
 
 </div>
 
-<h2>Add comment</h2>
-<form action="" method="POST" id="comment">
-    <input type="text" id="text" name="text" required>
-    <input class="next" type="submit" name="submit" value="Submit" onclick="">
-</form>
-
 <?php
+    if(!empty($_SESSION['username'])){
+        echo "<form action='' method='POST' id='comment'>";
+        echo "<input type='text' id='text' name='text' required>";
+        echo "<input class='next' type='submit' name='submit' value='Submit' onclick=''>";
+        echo "</form>";
+    } 
+
     $query = "SELECT comment.commentID, comment.postID, comment.userID, comment.text, user.username FROM comment INNER JOIN user ON (comment.userID = user.userID) WHERE postID = $postID";
 
     $stmt = $db->prepare($query);
