@@ -106,8 +106,7 @@
           
                 $stmt->close();
             }
-            
-          //$results = mysqli_query($dblink, $sql) or die (mysqli_error());
+
           }
 
     ?>

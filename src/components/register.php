@@ -48,6 +48,7 @@
         $stmt->close();
 
         $_SESSION["loggedin"] = true;
+        $_SESSION["userID"]
 
         header('Location: register2.php');
     }
