@@ -30,7 +30,6 @@
 <?php
     // ADD STORE SESSION AND COOKIES
      if (isset($_POST['submit'])){
-        session_start();
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
