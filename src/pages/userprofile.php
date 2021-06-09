@@ -30,7 +30,7 @@
         echo "<a href=\"profile.php?dogID=$dogID\"><img src='../profileImg/" . $profilePicture . "'/></a>";
         echo "<h4><a href=\"profile.php?dogID=$dogID\">$dogName</a></h4>";
         echo "</div>"; 
-        echo "<h5><a href=\"delete.php\">Remove dog</a></h5>";
+        echo "<h5><a href=\"delete.php?dogID=$dogID\">Remove dog</a></h5>";
     }
 
     $stmt->close();

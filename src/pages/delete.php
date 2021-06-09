@@ -5,7 +5,9 @@
     $dogID = $_GET['dogID'];
 
     $query = "DELETE FROM dog WHERE dogID=$dogID";
-    $db->exec($query);
-   
+    $stmt = $db->prepare($query);
+    $stmt->bind_param('i' ,$dogID);
+    $stmt->execute();
+
     header("Location: userprofile.php");
 ?>
