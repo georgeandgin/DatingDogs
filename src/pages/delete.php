@@ -4,7 +4,8 @@
 <?php
     $dogID = $_GET['dogID'];
 
-    mysqli_query($db,"DELETE FROM dog WHERE dogID=$dogID");
-    mysqli_close($db);
+    $query = "DELETE FROM dog WHERE dogID=$dogID";
+    $db->exec($query);
+   
     header("Location: userprofile.php");
 ?>

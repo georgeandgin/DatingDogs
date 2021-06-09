@@ -28,7 +28,6 @@
 </form>
 
 <?php
-    // ADD STORE SESSION AND COOKIES
      if (isset($_POST['submit'])){
         $username = $_POST['username'];
         $email = $_POST['email'];
@@ -48,7 +47,7 @@
         $stmt->close();
 
         $_SESSION["loggedin"] = true;
-        $_SESSION["userID"]
+        $_SESSION["userID"];
 
         header('Location: register2.php');
     }

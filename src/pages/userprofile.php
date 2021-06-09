@@ -37,7 +37,7 @@
 
 ?>
 
-<input type="submit" name="add" value="Add another dog" onclick="window.location='../components/register2.php';">
+<input type="submit" name="add" value="Add dog" onclick="window.location='../components/register2.php';">
 
 <?php include ('../components/footer.php');?>
 
