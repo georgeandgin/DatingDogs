@@ -49,33 +49,33 @@ if ($err) {
 <?php
 
 // POST CALL --- POST YOUR DOG PICTURES
-$curl = curl_init();
+// $curl = curl_init();
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.thedogapi.com/v1/images/upload",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "",
-  CURLOPT_HTTPHEADER => array(
-    "content-type: multipart/form-data;",
-    "x-api-key: 718b605c-479c-449d-b7ea-b0b011a51b87"
-  ),
-));
+// curl_setopt_array($curl, array(
+//   CURLOPT_URL => "https://api.thedogapi.com/v1/images/upload",
+//   CURLOPT_RETURNTRANSFER => true,
+//   CURLOPT_ENCODING => "",
+//   CURLOPT_MAXREDIRS => 10,
+//   CURLOPT_TIMEOUT => 30,
+//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//   CURLOPT_CUSTOMREQUEST => "POST",
+//   CURLOPT_POSTFIELDS => "",
+//   CURLOPT_HTTPHEADER => array(
+//     "content-type: multipart/form-data;",
+//     "x-api-key: 718b605c-479c-449d-b7ea-b0b011a51b87"
+//   ),
+// ));
 
-$response = curl_exec($curl);
-$err = curl_error($curl);
+// $response = curl_exec($curl);
+// $err = curl_error($curl);
 
-curl_close($curl);
+// curl_close($curl);
 
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}
+// if ($err) {
+//   echo "cURL Error #:" . $err;
+// } else {
+//   echo $response;
+// }
 
 ?>
 

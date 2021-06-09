@@ -28,7 +28,7 @@
     <label for="breed">Location:</label>
     <input type="text" id="location" name="location" required><br>
     <label for="breed">Description:</label>
-    <input type="text" id="description" name="description" required><br>
+    <textarea type="text" id="description" name="description" required> </textarea><br>
     <label for="breed">Phone number:</label>
     <input type="text" id="phone" name="phone" required><br>
     <label for="image">Profile picture:</label>
