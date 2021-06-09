@@ -8,6 +8,9 @@ $user = "root";
 $password = "";
 $database = "dogs";
 
-session_start();
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
 ?>

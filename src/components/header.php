@@ -8,9 +8,15 @@
 <a href="../components/api.php"><img id="headerbone" src="../assets/bone.png" alt="DOG BONE"></a>
 <div class="links">
 
-<h5><a href="../components/register.php"><i>register</i></a></h5>
-<h5><a href="../components/login.php"><i>login</i></a></h5>
-
+<?php
+    if (!isset($_SESSION["username"])) {
+        echo "<h5><a href='../components/register.php'><i>register</i></a></h5>";
+        echo "<h5><a href='../components/login.php'><i>login</i></a></h5>";
+    } else {
+        echo "<h5><a href='../components/userProfile.php'><i>profile</i></a></h5>";
+        echo "<h5><a href='../components/logout.php'><i>logout</i></a></h5>";
+    }
+?>
 
 </div>
 <br>
