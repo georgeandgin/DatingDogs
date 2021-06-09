@@ -1,5 +1,14 @@
-<?php include ('../components/config.php');?>
-<?php include ('../components/connect.php');?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    
+    <title>Dating Dogs</title>
+    <?php include ('../components/config.php');?>
+    <?php include ('../components/connect.php');?>
+</head>
 
 <body>
 
@@ -11,6 +20,7 @@
     <label for="breed">Breed:</label>
     <input type="text" id="breed" name="breed" required><br>
     <label for="mating">Mating:</label>
+    <br>
     <input type="radio" id="mating" name="mating" value="no" required>
     <label for="yes">YES</label><br>
     <input type="radio" id="mating" name="mating" value="yes" required>
@@ -23,8 +33,8 @@
     <input type="text" id="phone" name="phone" required><br>
     <label for="image">Profile picture:</label>
     <input type="file" id="image" name="image" accept="image/*" required><br>
-    <input type="submit" name="submit" value="Register dog profile" onclick="">
-    <input type="submit" name="later" value="Create dog profile later" onclick="window.location='../pages/index.php';">
+    <input class="next" type="submit" name="submit" value="Register dog profile" onclick="">
+    <input class="next" type="submit" name="later" value="Create dog profile later" onclick="window.location='../pages/index.php';">
 </form>
 
 <?php
@@ -69,5 +79,8 @@
         header('Location: ../pages/index.php');
     } 
 ?>
+
+<?php include ('../components/footer.php');?>
+
 
 </body>
