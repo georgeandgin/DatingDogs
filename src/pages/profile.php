@@ -20,6 +20,7 @@
         }
 
             while ($stmt->fetch()) {
+                echo "<div id='profile'>";
                 echo "<a href=\"profile.php?dogID=$dogID\"><img src='../profileImg/" . $profilePicture . "'/></a>";
                 echo "<h2>$dogname</h2>";
                 echo "<h3>$relationship</h3>";
@@ -27,6 +28,7 @@
                 echo "<p> $description</p>";
                 echo "<h2> Call me $phoneNumber</h2>";
                 echo "<h2> Owned by $username</h2>";
+                echo "</div>";
             }
     
         $stmt->close();

@@ -184,3 +184,77 @@ textarea{margin-left:10%;
     margin-left:0;
     margin-top:10px;
 }
+
+
+#randomimg{
+    width: 300px;
+}
+
+#dogPic{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+#center{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#profile {
+    margin-left:10%;
+    img {
+        max-width: 400px;
+    }
+    h2{
+        font-size: 24pt;
+    }
+    h3{
+        font-style: italic;
+    }
+    p{
+        max-width: 300px;
+    }
+}
+
+.newpost{
+     margin-left: 3%;
+     font-size: 16pt;
+     font-style: italic;
+}
+.forumpost{
+    margin-left:10%;
+    a{
+        font-size:24pt;
+    }
+    h6{
+        font-size: 12pt;
+        margin-top: 10px;
+    }
+}
+    #comment{
+        margin-right:10%;
+        display: flex;
+        flex-direction: column;
+        input{
+            width: auto;
+            line-height: 36px;
+        }
+    }
+
+#usrform{
+    input{
+        width:200px;
+    }
+    textarea{
+        width:250px;
+        height:200px;
+        margin-left:0;
+    }
+}
+
+#breed{
+    height:37px;
+}

@@ -24,7 +24,11 @@
 
 <?php
     if(!empty($_SESSION['username'])){
+<<<<<<< HEAD
+        echo "<h3 class='newpost'><a href='../components/createpost.php'>Create a post +</a></h3>";
+=======
         echo "<h3 class='newpost'><a href='../components/createpost.php'>Create a post</a></h3>";
+>>>>>>> d3931fef558b87eb7603e51009fa08c912f9a327
     }
 
     $query = "SELECT forumPost.postID, forumPost.userID, forumPost.heading, user.username FROM forumPost INNER JOIN user ON (forumPost.userID = user.userID)";

@@ -99,9 +99,9 @@
           }
 
     ?>
-
-<div class="profiles">
     <h2>All dogs</h2>
+<div class="profiles">
+
     <?php
         $query = "SELECT dogID, dogName, profilePicture from dog";
 

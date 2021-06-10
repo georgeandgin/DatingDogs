@@ -10,8 +10,16 @@
 
 <form action="" method="POST" id="usrform">
     <label for="heading">Heading</label>
+    <br>
     <input type="text" id="heading" name="heading" required>
+<<<<<<< HEAD
+    <br>
+    <br>
+    <textarea type="text" id="text" name="text" required> </textarea>
+    <br>
+=======
     <input type="text" id="text" name="text" required>
+>>>>>>> d3931fef558b87eb7603e51009fa08c912f9a327
     <input class="next" type="submit" name="submit" value="Submit" onclick="">
 </form>
 
