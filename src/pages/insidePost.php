@@ -13,9 +13,11 @@
         $stmt->execute();
 
         while ($stmt->fetch()) {
+            echo "<div id='commentcontainer'>";
             echo "<h2>$heading</h2>";
             echo "<h5> By $username</h5>";
             echo "<p> $text</p>";
+            echo "</div>";
         }
     
         $stmt->close();

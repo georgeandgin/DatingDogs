@@ -12,23 +12,19 @@
     <label for="heading">Heading</label>
     <br>
     <input type="text" id="heading" name="heading" required>
-<<<<<<< HEAD
     <br>
     <br>
     <textarea type="text" id="text" name="text" required> </textarea>
     <br>
-=======
-    <input type="text" id="text" name="text" required>
->>>>>>> d3931fef558b87eb7603e51009fa08c912f9a327
     <input class="next" type="submit" name="submit" value="Submit" onclick="">
 </form>
 
 
 <?php
      if (isset($_POST['submit'])){
-        $heading = $_POST['heading'];
-        $userID = $_SESSION["userID"];
-        $text = $_POST['text'];
+        $heading = strip_tags($_POST['heading']);
+        $userID = strip_tags($_SESSION["userID"]);
+        $text = strip_tags($_POST['text']);
 
         $query = "INSERT INTO forumPost (userID, heading, text) VALUES (?,?,?)";
 

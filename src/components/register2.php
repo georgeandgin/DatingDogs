@@ -39,8 +39,8 @@
 
 <?php
     if (isset($_POST['submit'])){
-        $dogName = $_POST['dogName'];
-        $breed = $_POST['breed'];
+        $dogName = strip_tags($_POST['dogName']);
+        $breed = strip_tags($_POST['breed']);
         $answer = $_POST['mating'];  
         if ($answer == "yes") {          
             $mating = 'Yes';  
@@ -48,9 +48,9 @@
         else {
             $mating = 'No'; 
         }   
-        $location = $_POST['location'];
-        $description = $_POST['description'];
-        $phoneNumber = $_POST['phone'];
+        $location = strip_tags($_POST['location')];
+        $description = strip_tags($_POST['description']);
+        $phoneNumber = strip_tags($_POST['phone']);
 
         $user = $_SESSION['username'];
 
