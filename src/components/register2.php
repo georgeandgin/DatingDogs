@@ -48,7 +48,7 @@
         else {
             $mating = 'No'; 
         }   
-        $location = strip_tags($_POST['location')];
+        $location = strip_tags($_POST['location']);
         $description = strip_tags($_POST['description']);
         $phoneNumber = strip_tags($_POST['phone']);
 
